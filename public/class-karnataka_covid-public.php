@@ -74,7 +74,7 @@ class Karnataka_covid_Public {
 		 */
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/karnataka_covid-public.css', array(), $this->version, 'all' );
-		wp_enqueue_style( $this->plugin_name."_datatable_css", '//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name."_datatable_css", plugin_dir_url( __FILE__ ) . 'css/datatables.min.css', array(), $this->version, 'all' );
 
 	}
 
@@ -100,7 +100,7 @@ class Karnataka_covid_Public {
 			//Enqueue
 			wp_enqueue_script( 'jquery' );
 		}
-		wp_enqueue_script( $this->plugin_name."_data_table", '//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js', array( 'jquery' ), $this->version, true );
+		wp_enqueue_script( $this->plugin_name."_data_table", plugin_dir_url( __FILE__ ) . 'js/datatables.min.js', array( 'jquery' ), $this->version, true );
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/karnataka_covid-public.js', array( 'jquery',$this->plugin_name."_data_table" ), $this->version, true );
 
 	}

@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://grandworks.co
- * @since             1.0.0
+ * @since             1.1
  * @package           Karnataka_covid
  *
  * @wordpress-plugin
  * Plugin Name:       Karnataka COVID 19 tracker
  * Plugin URI:        https://grandworks.co
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
- * Version:           1.0
+ * Version:           1.1
  * Author:            GrandWorks
  * Author URI:        https://grandworks.co
  * License:           GPL-2.0+
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'KARNATAKA_COVID_VERSION', '1.0.0' );
+define( 'KARNATAKA_COVID_VERSION', '1.1' );
 
 /**
  * The code that runs during plugin activation.
