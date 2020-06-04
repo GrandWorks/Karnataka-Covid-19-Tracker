@@ -72,6 +72,11 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-karnataka_covid.php';
 require plugin_dir_path( __FILE__ ) . 'includes/display-table.php';
 
 /**
+ * Include updater
+ */
+require_once plugin_dir_path( __FILE__ ) . 'includes/Updater-class.php';
+
+/**
  * Begins execution of the plugin.
  *
  * Since everything within the plugin is registered via hooks,
@@ -82,6 +87,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/display-table.php';
  */
 function run_karnataka_covid() {
 
+	
+	if ( is_admin() ) {
+		new BFIGitHubPluginUpdater( __FILE__, 'myGitHubUsername', "Repo-Name" );
+	}
 	function display_table( $atts ){
 		return generate_table();
 	}
