@@ -89,7 +89,7 @@ function run_karnataka_covid() {
 
 	
 	if ( is_admin() ) {
-		new BFIGitHubPluginUpdater( __FILE__, 'myGitHubUsername', "Repo-Name" );
+		new BFIGitHubPluginUpdater( __FILE__, 'GrandWorks', "Karnataka-Covid-19-Tracker" );
 	}
 	function display_table( $atts ){
 		return generate_table();
