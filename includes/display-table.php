@@ -1,5 +1,4 @@
 <?php
-
 function generate_table(){
   $response = wp_remote_get( 'https://api.covid19india.org/state_district_wise.json' );
 
@@ -103,5 +102,3 @@ function generate_table(){
           <p class="update-info">Updated: '.$updated_date.'. Source: <a href="https://api.covid19india.org">India Data</a>, <a href="https://api.covid19india.org">Karnataka District Data</a></p>
           ';
 }
-?>
-

@@ -7,7 +7,7 @@
  * so that it is ready for translation.
  *
  * @link       https://grandworks.co
- * @since      1.0.0
+ * @since      1.2
  *
  * @package    Karnataka_covid
  * @subpackage Karnataka_covid/includes
@@ -19,7 +19,7 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @since      1.0.0
+ * @since      1.2
  * @package    Karnataka_covid
  * @subpackage Karnataka_covid/includes
  * @author     GrandWorks <hello@grandworks.co>
@@ -30,7 +30,7 @@ class Karnataka_covid_i18n {
 	/**
 	 * Load the plugin text domain for translation.
 	 *
-	 * @since    1.0.0
+	 * @since    1.2
 	 */
 	public function load_plugin_textdomain() {
 

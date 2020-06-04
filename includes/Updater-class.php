@@ -1,5 +1,4 @@
 <?php
-
 class BFIGitHubPluginUpdater {
  
     private $slug; // plugin slug

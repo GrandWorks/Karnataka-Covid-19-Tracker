@@ -4,7 +4,7 @@
  * Fired during plugin deactivation
  *
  * @link       https://grandworks.co
- * @since      1.0.0
+ * @since      1.2
  *
  * @package    Karnataka_covid
  * @subpackage Karnataka_covid/includes
@@ -15,7 +15,7 @@
  *
  * This class defines all code necessary to run during the plugin's deactivation.
  *
- * @since      1.0.0
+ * @since      1.2
  * @package    Karnataka_covid
  * @subpackage Karnataka_covid/includes
  * @author     GrandWorks <hello@grandworks.co>
@@ -27,7 +27,7 @@ class Karnataka_covid_Deactivator {
 	 *
 	 * Long Description.
 	 *
-	 * @since    1.0.0
+	 * @since    1.2
 	 */
 	public static function deactivate() {
 
