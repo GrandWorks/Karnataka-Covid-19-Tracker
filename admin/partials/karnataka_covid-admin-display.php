@@ -6,7 +6,7 @@
  * This file is used to markup the admin-facing aspects of the plugin.
  *
  * @link       https://grandworks.co
- * @since      1.2
+ * @since      1.3
  *
  * @package    Karnataka_covid
  * @subpackage Karnataka_covid/admin/partials
