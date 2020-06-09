@@ -51,8 +51,8 @@ function generate_table(){
   $country_data = wp_remote_post( "https://covidstat.info/graphql",$options);
   $country_response = wp_remote_retrieve_body( $country_data);
   $country = json_decode($country_response)->data->country;
-  $updated_date = date("F j, Y [h:i a]", substr($country->updated, 0, 10));;
-
+  $updated_date = date("F j, Y [h:i a]", substr($country->updated, 0, 10));
+ 
   return '<div class="aggregate-stat">
             <div class="stat">
               <table class="aggregate-table" id="aggregate-table">
@@ -85,20 +85,22 @@ function generate_table(){
             </div>
           </div>
           <h2>District-Wise COVID-19 Cases In Karnataka</h2>
-          <table id="info-table" class="display">
-            <thead>
-              <tr>
-                  <th>District</th>
-                  <th>Total Confirmed Cases</th>
-                  <th>Active Cases</th>
-                  <th>Total Recovered</th>
-                  <th>Total Death</th>
-              </tr>
-            </thead>
-            <tbody>'
-              .$district_rows.
-            '</tbody>
-          </table>
+          
+            <table id="info-table">
+              <thead>
+                <tr>
+                    <th>District</th>
+                    <th>Total Confirmed Cases</th>
+                    <th>Active Cases</th>
+                    <th>Total Recovered</th>
+                    <th>Total Death</th>
+                </tr>
+              </thead>
+              <tbody>'
+                .$district_rows.
+              '</tbody>
+            </table>
+          
           <p class="update-info">Updated: '.$updated_date.'. Source: <a href="https://api.covid19india.org">India Data</a>, <a href="https://api.covid19india.org">Karnataka District Data</a></p>
           ';
 }

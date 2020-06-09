@@ -6,12 +6,21 @@ jQuery(document).ready(function(){
 			paging: false,
 			searching:false,
 			info:false,
+			"scrollX": true,
 			"columns": [
 				{ "data": "District" },
-				{ "data": "Total Confirmed Cases" },
-				{ "data": "Active Cases" },
-				{ "data": "Total Recovered" },
-				{ "data": "Total Death" },
+				{ "data": "Total Confirmed Cases", render: function(data,type,row){
+					return Number(data).toLocaleString('en-IN');
+				}},
+				{ "data": "Active Cases",render: function(data,type,row){
+					return Number(data).toLocaleString('en-IN');
+				} },
+				{ "data": "Total Recovered", render: function(data,type,row){
+					return Number(data).toLocaleString('en-IN');
+				} },
+				{ "data": "Total Death", render: function(data,type,row){
+					return Number(data).toLocaleString('en-IN');
+				} },
 			]
 		});
 	}
@@ -22,12 +31,21 @@ jQuery(document).ready(function(){
 			searching:false,
 			paging: false,
 			info:false,
+			// "scrollX": true,
 			"columns": [
-				{ "data": "District" },
-				{ "data": "Total Confirmed Cases" },
-				{ "data": "Active Cases" },
-				{ "data": "Total Recovered" },
-				{ "data": "Total Death" },
+				{ "data": " " },
+				{ "data": "Total Confirmed Cases",render: function(data,type,row){
+					return Number(data).toLocaleString('en-IN');
+				} },
+				{ "data": "Active Cases",render: function(data,type,row){
+					return Number(data).toLocaleString('en-IN');
+				} },
+				{ "data": "Total Recovered",render: function(data,type,row){
+					return Number(data).toLocaleString('en-IN');
+				} },
+				{ "data": "Total Death", render: function(data,type,row){
+					return Number(data).toLocaleString('en-IN');
+				} },
 			]
 		});
 	}
