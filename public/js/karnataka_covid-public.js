@@ -31,7 +31,7 @@ jQuery(document).ready(function(){
 			searching:false,
 			paging: false,
 			info:false,
-			// "scrollX": true,
+			"scrollX": true,
 			"columns": [
 				{ "data": " " },
 				{ "data": "Total Confirmed Cases",render: function(data,type,row){
