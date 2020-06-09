@@ -4,7 +4,7 @@
  * The public-facing functionality of the plugin.
  *
  * @link       https://grandworks.co
- * @since      1.3
+ * @since      1.4
  *
  * @package    Karnataka_covid
  * @subpackage Karnataka_covid/public
@@ -25,7 +25,7 @@ class Karnataka_covid_Public {
 	/**
 	 * The ID of this plugin.
 	 *
-	 * @since    1.3
+	 * @since    1.4
 	 * @access   private
 	 * @var      string    $plugin_name    The ID of this plugin.
 	 */
@@ -34,7 +34,7 @@ class Karnataka_covid_Public {
 	/**
 	 * The version of this plugin.
 	 *
-	 * @since    1.3
+	 * @since    1.4
 	 * @access   private
 	 * @var      string    $version    The current version of this plugin.
 	 */
@@ -43,7 +43,7 @@ class Karnataka_covid_Public {
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @since    1.3
+	 * @since    1.4
 	 * @param      string    $plugin_name       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
@@ -57,7 +57,7 @@ class Karnataka_covid_Public {
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
 	 *
-	 * @since    1.3
+	 * @since    1.4
 	 */
 	public function enqueue_styles() {
 
@@ -74,14 +74,13 @@ class Karnataka_covid_Public {
 		 */
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/karnataka_covid-public.css', array(), $this->version, 'all' );
-		wp_enqueue_style( $this->plugin_name."_datatable_css", plugin_dir_url( __FILE__ ) . 'css/datatables.min.css', array(), $this->version, 'all' );
 
 	}
 
 	/**
 	 * Register the JavaScript for the public-facing side of the site.
 	 *
-	 * @since    1.3
+	 * @since    1.4
 	 */
 	public function enqueue_scripts() {
 
@@ -100,7 +99,6 @@ class Karnataka_covid_Public {
 			//Enqueue
 			wp_enqueue_script( 'jquery' );
 		}
-		wp_enqueue_script( $this->plugin_name."_data_table", plugin_dir_url( __FILE__ ) . 'js/datatables.min.js', array( 'jquery' ), $this->version, true );
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/karnataka_covid-public.js', array( 'jquery',$this->plugin_name."_data_table" ), $this->version, true );
 
 	}

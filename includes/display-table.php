@@ -25,10 +25,10 @@ function generate_table(){
   foreach ($districtData as $key => $value) {
     $district_rows .= '<tr>
         <td>'.$key.'</td>
-        <td>'.$value->confirmed.'</td>
-        <td>'.$value->active.'</td>
-        <td>'.$value->recovered.'</td>
-        <td>'.$value->deceased.'</td>
+        <td data-number>'.$value->confirmed.'</td>
+        <td data-number>'.$value->active.'</td>
+        <td data-number>'.$value->recovered.'</td>
+        <td data-number>'.$value->deceased.'</td>
     </tr>';
   }
 
@@ -54,7 +54,7 @@ function generate_table(){
   $updated_date = date("F j, Y [h:i a]", substr($country->updated, 0, 10));
  
   return '<div class="aggregate-stat">
-            <div class="stat">
+            <div class="table-wrapper">
               <table class="aggregate-table" id="aggregate-table">
                 <thead>
                   <tr>
@@ -68,24 +68,24 @@ function generate_table(){
                 <tbody>
                   <tr>
                     <td class="title">India</td>
-                    <td>'.($country->active + $country->recovered + $country->deaths).'</td>
-                    <td>'.$country->active.'</td>
-                    <td>'. $country->recovered.'</td>
-                    <td>'.$country->deaths.'</td>
+                    <td data-number>'.($country->active + $country->recovered + $country->deaths).'</td>
+                    <td data-number>'.$country->active.'</td>
+                    <td data-number>'. $country->recovered.'</td>
+                    <td data-number>'.$country->deaths.'</td>
                   </tr>
                   <tr>
                     <td class="title">'.$karnataka_state_object->state.'</td>
-                    <td>'.$karnataka_state_object->confirmed.'</td>
-                    <td>'. $karnataka_state_object->active.'</td>
-                    <td>'.$karnataka_state_object->recovered.'</td>
-                    <td>'. $karnataka_state_object->deaths .'</td>
+                    <td data-number>'.$karnataka_state_object->confirmed.'</td>
+                    <td data-number>'. $karnataka_state_object->active.'</td>
+                    <td data-number>'.$karnataka_state_object->recovered.'</td>
+                    <td data-number>'. $karnataka_state_object->deaths .'</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
           <h2>District-Wise COVID-19 Cases In Karnataka</h2>
-          
+          <div class="table-wrapper">
             <table id="info-table">
               <thead>
                 <tr>
@@ -100,6 +100,7 @@ function generate_table(){
                 .$district_rows.
               '</tbody>
             </table>
+          </div>
           
           <p class="update-info">Updated: '.$updated_date.'. Source: <a href="https://api.covid19india.org">India Data</a>, <a href="https://api.covid19india.org">Karnataka District Data</a></p>
           ';
