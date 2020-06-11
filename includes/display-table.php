@@ -25,10 +25,10 @@ function generate_table(){
   foreach ($districtData as $key => $value) {
     $district_rows .= '<tr>
         <td>'.$key.'</td>
-        <td data-number>'.$value->confirmed.'</td>
-        <td data-number>'.$value->active.'</td>
-        <td data-number>'.$value->recovered.'</td>
-        <td data-number>'.$value->deceased.'</td>
+        <td data-number>'.number_format($value->confirmed).'</td>
+        <td data-number>'.number_format($value->active).'</td>
+        <td data-number>'.number_format($value->recovered).'</td>
+        <td data-number>'.number_format($value->deceased).'</td>
     </tr>';
   }
 
@@ -68,17 +68,17 @@ function generate_table(){
                 <tbody>
                   <tr>
                     <td class="title">India</td>
-                    <td data-number>'.($country->active + $country->recovered + $country->deaths).'</td>
-                    <td data-number>'.$country->active.'</td>
-                    <td data-number>'. $country->recovered.'</td>
-                    <td data-number>'.$country->deaths.'</td>
+                    <td data-number>'.number_format(($country->active + $country->recovered + $country->deaths)).'</td>
+                    <td data-number>'.number_format($country->active).'</td>
+                    <td data-number>'.number_format($country->recovered).'</td>
+                    <td data-number>'.number_format($country->deaths).'</td>
                   </tr>
                   <tr>
                     <td class="title">'.$karnataka_state_object->state.'</td>
-                    <td data-number>'.$karnataka_state_object->confirmed.'</td>
-                    <td data-number>'. $karnataka_state_object->active.'</td>
-                    <td data-number>'.$karnataka_state_object->recovered.'</td>
-                    <td data-number>'. $karnataka_state_object->deaths .'</td>
+                    <td data-number>'.number_format($karnataka_state_object->confirmed).'</td>
+                    <td data-number>'.number_format($karnataka_state_object->active).'</td>
+                    <td data-number>'.number_format($karnataka_state_object->recovered).'</td>
+                    <td data-number>'.number_format($karnataka_state_object->deaths).'</td>
                   </tr>
                 </tbody>
               </table>
@@ -102,6 +102,6 @@ function generate_table(){
             </table>
           </div>
           
-          <p class="update-info">Updated: '.$updated_date.'. Source: <a href="https://api.covid19india.org">India Data</a>, <a href="https://api.covid19india.org">Karnataka District Data</a></p>
+          <p class="update-info">Updated: '.$updated_date.'. Source: <a href="https://api.covid19india.org" target="_blank">India Data</a>, <a href="https://api.covid19india.org" target="_blank" >Karnataka District Data</a></p>
           ';
 }
