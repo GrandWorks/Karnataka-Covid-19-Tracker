@@ -265,13 +265,14 @@ function generate_table($attribute=[]){
   //   ]
   // ];
   // $country_data = wp_remote_post( "https://covidstat.info/graphql",$options);
-  $country_data = wp_remote_get( "https://covid-19india-api.herokuapp.com/all");
-  $country_response = wp_remote_retrieve_body( $country_data);
-  $country = json_decode($country_response);
-  $country = $country[0];  
+  // $country_data = wp_remote_get( "https://covid-19india-api.herokuapp.com/all");
+  // $country_data = wp_remote_get( "https://disease.sh/v3/covid-19/all");
+  // $country_response = wp_remote_retrieve_body( $country_data);
+  $country = $statewise[0];
+  // $country = $country[0];
   // die();
-  $updated_date = $country->last_updated;
-
+  $updated_date = $country->lastupdatedtime;
+  $date = DateTime::createFromFormat('d/m/Y H:i:s',$updated_date);
   $india_title = "";
   $karnataka_title = "";
   $district = "";
@@ -285,7 +286,8 @@ function generate_table($attribute=[]){
   {
     if($attribute["kannada"]=="true")
     { 
-      $india_title = "";
+      $india_title = "ಇಂಡಿಯ";
+      $karnataka="ಕರ್ನಾಟಕ";
       $karnataka_title = "ಕರ್ನಾಟಕದ ಜಿಲ್ಲಾವಾರು ಕೋವಿಡ್-19 ಪ್ರಕರಣಗಳು";
       $district = "ಜಿಲ್ಲೆ";
       $total_confirmed_cases="ಒಟ್ಟು ದೃಢಪಟ್ಟ ಪ್ರಕರಣಗಳು";
@@ -297,7 +299,8 @@ function generate_table($attribute=[]){
   }
   else
   { 
-    $india_title = "";
+    $india_title = "India";
+    $karnataka = "Karnataka";
     $karnataka_title = "District-Wise COVID-19 Cases In Karnataka";
     $district = "District";
     $total_confirmed_cases="Total Confirmed Cases";
@@ -320,14 +323,14 @@ function generate_table($attribute=[]){
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="title">India</td>
-                    <td data-number>'.number_format(($country->confirmed_cases)).'</td>
-                    <td data-number>'.number_format($country->active_cases).'</td>
-                    <td data-number>'.number_format($country->recovered_cases).'</td>
-                    <td data-number>'.number_format($country->death_cases).'</td>
+                    <td class="title">'.$india_title.'</td>
+                    <td data-number>'.number_format(($country->confirmed)).'</td>
+                    <td data-number>'.number_format($country->active).'</td>
+                    <td data-number>'.number_format($country->recovered).'</td>
+                    <td data-number>'.number_format($country->deaths).'</td>
                   </tr>
                   <tr>
-                    <td class="title">'.$karnataka_state_object->state.'</td>
+                    <td class="title">'.$karnataka.'</td>
                     <td data-number>'.number_format($karnataka_state_object->confirmed).'</td>
                     <td data-number>'.number_format($karnataka_state_object->active).'</td>
                     <td data-number>'.number_format($karnataka_state_object->recovered).'</td>
@@ -355,6 +358,6 @@ function generate_table($attribute=[]){
             </table>
           </div>
           
-          <p class="update-info">Updated: '.$updated_date.'. Source: <a href="https://api.covid19india.org" target="_blank">India Data</a>, <a href="https://api.covid19india.org" target="_blank" >Karnataka District Data</a></p>
+          <p class="update-info">Accessed on '.$date->format("Y-m-d").' from <a href="https://api.covid19india.org" target="_blank">https://api.covid19india.org</a></p>
           ';
 }
