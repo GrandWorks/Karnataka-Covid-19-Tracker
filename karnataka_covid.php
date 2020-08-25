@@ -72,6 +72,13 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-karnataka_covid.php';
 require plugin_dir_path( __FILE__ ) . 'includes/display-table.php';
 
 /**
+ * 
+ * Include India table generator
+ */
+
+require plugin_dir_path( __FILE__ ) . 'includes/india-table.php';
+
+/**
  * Include updater
  */
 require_once plugin_dir_path( __FILE__ ) . 'includes/Updater-class.php';
@@ -94,7 +101,12 @@ function run_karnataka_covid() {
 		return generate_table($atts);
 	}
 	add_shortcode( 'karnataka_covid_tracker', 'display_table' );
-	
+
+	function display_india_table($atts){
+		return india_table($atts);
+	}
+	add_shortcode( 'india_covid_tracker', 'display_india_table' );
+
 	$plugin = new Karnataka_covid();
 	$plugin->run();
 }

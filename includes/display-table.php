@@ -342,7 +342,7 @@ function generate_table($attribute=[]){
           </div>
           <h2>'.$karnataka_title.'</h2>
           <div class="table-wrapper">
-            <table id="info-table">
+            <table class="info-table">
               <thead>
                 <tr>
                     <th>'.$district.'</th>
