@@ -44,7 +44,15 @@ function india_table($attribute=[])
 
     for($i=0; $i<sizeof($coulmns); $i++)
     {
-        $generated_columns = $generated_columns . '<th>' .$coulmns[$i][$language]. '</th>';
+        if($i==0)
+        {
+            $generated_columns = $generated_columns . '<th class="sticky-col">' .$coulmns[$i][$language]. '</th>';
+        }
+        else
+        {
+            $generated_columns = $generated_columns . '<th>' .$coulmns[$i][$language]. '</th>';
+        }
+        
     }
 
     $generated_row = "";
@@ -59,7 +67,7 @@ function india_table($attribute=[])
             if($value->statecode != "UN")
             {
                 $generated_row .= '<tr>
-                <td>'.$value->state.'</td>
+                <td class="sticky-col sticky-data">'.$value->state.'</td>
                 <td data-number>'.number_format($value->confirmed).'</td>
                 <td data-number>'.number_format($value->active).'</td>
                 <td data-number>'.number_format($value->recovered).'</td>

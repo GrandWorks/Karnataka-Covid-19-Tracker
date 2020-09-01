@@ -226,7 +226,7 @@ function generate_table($attribute=[]){
     {
       
       $other_state_row = '<tr>
-        <td>'.$title.'</td>
+        <td class="sticky-col sticky-data">'.$title.'</td>
         <td data-number>'.number_format($value->confirmed).'</td>
         <td data-number>'.number_format($value->active).'</td>
         <td data-number>'.number_format($value->recovered).'</td>
@@ -236,7 +236,7 @@ function generate_table($attribute=[]){
     else
     {
       $district_rows .= '<tr>
-        <td>'.$title.'</td>
+        <td class="sticky-col sticky-data">'.$title.'</td>
         <td data-number>'.number_format($value->confirmed).'</td>
         <td data-number>'.number_format($value->active).'</td>
         <td data-number>'.number_format($value->recovered).'</td>
@@ -314,7 +314,7 @@ function generate_table($attribute=[]){
               <table class="aggregate-table" id="aggregate-table">
                 <thead>
                   <tr>
-                    <th> </th>
+                    <th class="sticky-col"> </th>
                     <th>'.$total_confirmed_cases.'</th>
                     <th>'.$active_cases.'</th>
                     <th>'.$recovered.'</th>
@@ -323,14 +323,14 @@ function generate_table($attribute=[]){
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="title">'.$india_title.'</td>
+                    <td class="title sticky-col sticky-data">'.$india_title.'</td>
                     <td data-number>'.number_format(($country->confirmed)).'</td>
                     <td data-number>'.number_format($country->active).'</td>
                     <td data-number>'.number_format($country->recovered).'</td>
                     <td data-number>'.number_format($country->deaths).'</td>
                   </tr>
                   <tr>
-                    <td class="title">'.$karnataka.'</td>
+                    <td class="title sticky-col sticky-data">'.$karnataka.'</td>
                     <td data-number>'.number_format($karnataka_state_object->confirmed).'</td>
                     <td data-number>'.number_format($karnataka_state_object->active).'</td>
                     <td data-number>'.number_format($karnataka_state_object->recovered).'</td>
@@ -345,7 +345,7 @@ function generate_table($attribute=[]){
             <table class="info-table">
               <thead>
                 <tr>
-                    <th>'.$district.'</th>
+                    <th class="sticky-col">'.$district.'</th>
                     <th>'.$total_confirmed_cases.'</th>
                     <th>'.$active_cases.'</th>
                     <th>'.$recovered.'</th>

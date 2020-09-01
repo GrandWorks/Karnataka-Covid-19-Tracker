@@ -10,9 +10,12 @@
 .info-table {margin-bottom: 1.9rem;}
 
 .table-wrapper {width: 100%; overflow: hidden;}
+
   /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .table-wrapper {width: 100%; overflow-x: scroll;}
+    .sticky-col{position: sticky; left: -1px; width: 150px;}
+    .sticky-data{background-color: white;}
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
