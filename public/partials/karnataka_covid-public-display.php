@@ -6,7 +6,7 @@
  * This file is used to markup the public-facing aspects of the plugin.
  *
  * @link       https://grandworks.co
- * @since      1.9
+ * @since      2.0
  *
  * @package    Karnataka_covid
  * @subpackage Karnataka_covid/public/partials

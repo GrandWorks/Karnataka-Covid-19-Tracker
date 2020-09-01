@@ -20,7 +20,7 @@
  * https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate/pull/123#issuecomment-28541913
  *
  * @link       https://grandworks.co
- * @since      1.9
+ * @since      2.0
  *
  * @package    Karnataka_covid
  */
