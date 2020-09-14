@@ -1,4 +1,4 @@
-# h1 Karnataka-Covid-19-Tracker
+# Karnataka-Covid-19-Tracker
 
 # Usage:
 Install the plugin and activate
